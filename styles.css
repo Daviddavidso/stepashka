@@ -205,7 +205,7 @@ a.micro:hover,.micro a:hover{text-decoration:underline;text-underline-offset:.2e
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";content:"+" / "";flex:0 0 auto;font-weight:600;font-size:1.3em;line-height:.8}
 .faq details[open] summary::after{content:"−";content:"−" / ""}
-.faq summary{padding-inline:.4rem;margin-inline:-.4rem}
+.faq summary{padding-inline:min(.4rem,2cqw);margin-inline:calc(-1*min(.4rem,2cqw))}
 .faq summary:focus-visible{outline-offset:-3px}
 .faq details p{max-width:42rem;padding:0 0 5cqw;font-weight:500;font-size:max(1.0625rem,4.4cqw);line-height:1.45;color:rgba(255,255,255,.86)}
 
@@ -215,7 +215,7 @@ a.micro:hover,.micro a:hover{text-decoration:underline;text-underline-offset:.2e
 .foot__age{font-family:var(--display);font-weight:900;font-size:30vw;line-height:.75;letter-spacing:-.04em}
 .foot__legal{max-width:46rem;font-weight:500;font-size:max(1rem,4cqw);line-height:1.45;color:rgba(255,255,255,.86);text-transform:none}
 .foot__line{display:flex;justify-content:space-between;gap:1rem;margin-top:1.4rem;color:var(--white-72)}
-.foot__line a{padding-block:.8em;margin-block:-.8em}
+.foot__line a{padding:.8em 0;margin:-.8em 0}
 .noscript{padding:4cqw 2.3cqw}
 html:not(.js) .rank__empty{display:none}
 .promo--b:focus-visible{background:#191919}
@@ -226,15 +226,15 @@ html:not(.js) .rank__empty{display:none}
    но микротекст набран крупно, а блоки разделены волосяными линиями. */
 
 @media (max-width:44.99em){
-  .micro{font-size:clamp(1.0625rem,4.9cqw,1.487rem);line-height:1.22}
+  .micro{font-size:clamp(1.19rem,4.9cqw,1.487rem);line-height:1.22}
   .panel{padding:2.3cqw 2.3cqw 9cqw;gap:0}
 
   /* ── A ── */
   .panel--a{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:start;
     grid-template-areas:"nav nav" "est est" "stage stage" "slogan qr" "manifest manifest" "contacts contacts" "promo promo"}
-  .p-nav{grid-area:nav;padding:3.5cqw 1.8cqw 0}
-  .p-nav .lbl{font-size:clamp(1rem,4.5cqw,1.4rem);padding-block:.8em;margin-block:-.8em}
-  .panel--a .p-est{grid-area:est;margin:0;padding-top:2.4cqw;font-size:clamp(.9375rem,4cqw,1.312rem)}
+  .p-nav{grid-area:nav;padding:3.5cqw 1.8cqw 0;flex-wrap:wrap;column-gap:.75em}
+  .p-nav .lbl{font-size:clamp(1.12rem,4.5cqw,1.4rem);padding-block:.8em;margin-block:-.8em}
+  .panel--a .p-est{grid-area:est;margin:0;padding-top:2.4cqw;font-size:clamp(1.05rem,4cqw,1.312rem)}
   .panel--a .stage{grid-area:stage;margin-top:8cqw}
   .panel--a .stroke{left:33cqw;top:12.5cqw;width:65cqw}
   .slogan--a{grid-area:slogan;align-self:end;margin:2cqw 1.8cqw 0;font-size:16cqw;line-height:.92}
@@ -243,19 +243,19 @@ html:not(.js) .rank__empty{display:none}
   .contacts--a{grid-area:contacts;margin-top:7cqw}
   .contacts--a .contacts__h{padding-bottom:3cqw;color:var(--white-72)}
   .contacts--a li{border-top:1px solid var(--line);align-items:center;min-height:3.4rem}
-  .contacts--a li > a{font-size:clamp(1.375rem,6.4cqw,1.925rem);font-weight:700;min-height:3.4rem}
-  .contacts--a .n{font-size:clamp(1.125rem,5cqw,1.575rem);color:var(--white-72)}
+  .contacts--a li > a{font-size:clamp(1.54rem,6.4cqw,1.925rem);font-weight:700;min-height:3.4rem}
+  .contacts--a .n{font-size:clamp(1.26rem,5cqw,1.575rem);color:var(--white-72)}
   .contacts--a li:last-child{border-bottom:1px solid var(--line)}
   .promo--a{grid-area:promo}
   .promo--a,.promo--b{display:flex;align-items:center;justify-content:space-between;gap:1rem;align-self:stretch;min-height:3.6rem;
-    padding:0 1.25rem;margin:7cqw 1.8cqw 0;border:1px solid #fff;text-decoration:none;font-size:clamp(1.0625rem,4.9cqw,1.487rem)}
+    padding:0 1.25rem;margin:7cqw 1.8cqw 0;border:1px solid #fff;text-decoration:none;font-size:clamp(1.19rem,4.9cqw,1.487rem)}
 
   /* ── B ── (верх панели в потоке: при крупном шрифте блоки раздвигаются, а не налезают) */
   .panel--b{padding-top:2.3cqw}
   .panel--b .p-lbl,.panel--b .p-est{position:static;margin:0;padding-inline:1.8cqw}
-  .panel--b .p-lbl{order:-3;padding-top:3.5cqw;font-size:clamp(1rem,4.5cqw,1.4rem)}
-  .panel--b .p-est{order:-2;padding-top:2.4cqw;font-size:clamp(.9375rem,4cqw,1.3rem)}
-  .contacts--b{order:-1;position:relative;z-index:3;width:38cqw;margin:8cqw 1.8cqw 0;font-size:clamp(1rem,4.4cqw,1.4rem);line-height:1.3}
+  .panel--b .p-lbl{order:-3;padding-top:3.5cqw;flex-wrap:wrap;column-gap:.75em;font-size:clamp(1.12rem,4.5cqw,1.4rem)}
+  .panel--b .p-est{order:-2;padding-top:2.4cqw;font-size:clamp(1.05rem,4cqw,1.3rem)}
+  .contacts--b{order:-1;position:relative;z-index:3;width:38cqw;margin:8cqw 1.8cqw 0;font-size:clamp(1.12rem,4.4cqw,1.4rem);line-height:1.3}
   .qr--b{display:none}
   .panel--b .stage{margin-top:7cqw}
   .panel--b .deco{left:-2.3cqw;top:-62cqw;width:100cqw;height:88cqw;overflow:hidden}
@@ -269,7 +269,7 @@ html:not(.js) .rank__empty{display:none}
   /* ── C ── */
   .panel--c{display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:start;
     grid-template-areas:"lbl lbl" "brand brand" "photo photo" "head head" "man man" "stroke stroke" "cont slog" "qr qr"}
-  .panel--c .p-lbl{grid-area:lbl;margin:0;padding:3.5cqw 1.8cqw 0;font-size:clamp(1rem,4.5cqw,1.4rem)}
+  .panel--c .p-lbl{grid-area:lbl;margin:0;padding:3.5cqw 1.8cqw 0;flex-wrap:wrap;column-gap:.75em;font-size:clamp(1.12rem,4.5cqw,1.4rem)}
   .brandword{grid-area:brand;position:relative;z-index:2;font-size:27cqw;margin-block:calc(3cqw - .3em) -.3em}
   .panel--c .deco{grid-area:photo;position:relative;order:0;aspect-ratio:4/5;margin:1cqw 0 0}
   .panel--c .stage{grid-area:head;order:0;position:static;margin-top:-25cqw;z-index:2}
@@ -279,33 +279,34 @@ html:not(.js) .rank__empty{display:none}
   .manifest--c{grid-area:man;order:0;margin-top:9cqw;padding-top:5cqw;border-top:1px solid var(--line)}
   .panel--c .deco-top{grid-area:stroke;order:0;position:relative;inset:auto;height:26cqw;margin:5cqw -2.3cqw 0}
   .panel--c .stroke{left:auto;right:auto;top:0;width:96cqw;margin-inline:auto}
-  .contacts--c{grid-area:cont;order:0;align-self:end;margin-top:6cqw;font-size:clamp(1rem,4.6cqw,1.4rem)}
+  .contacts--c{grid-area:cont;order:0;align-self:end;margin-top:6cqw;font-size:clamp(1.12rem,4.6cqw,1.4rem)}
   .slogan--c{grid-area:slog;order:0;align-self:end;text-align:right;font-size:15cqw;margin:6cqw 1.8cqw 0 0}
   .qr--c{grid-area:qr;order:0;width:20cqw;margin:7cqw 1.8cqw 0}
 
   /* ── рейтинг ── */
   .rank__head{padding-bottom:4cqw}
-  .rank__note{font-size:clamp(1.125rem,4.9cqw,1.575rem);padding-bottom:7cqw}
+  .rank__note{font-size:clamp(1.26rem,4.9cqw,1.575rem);padding-bottom:7cqw}
   .row{padding:8cqw 2.3cqw 8cqw;row-gap:3.5cqw;overflow:hidden}
   .row__n{position:absolute;top:2cqw;right:2.3cqw;z-index:0;pointer-events:none;
     font-family:var(--display);font-weight:900;font-size:36cqw;line-height:.72;letter-spacing:0;color:transparent;
     -webkit-text-stroke:1.5px rgba(255,255,255,.32)}
   .row__name,.row__bonus{position:relative;z-index:1}
   .row__name{font-size:min(28cqw,8rem)}
-  .row__bonus .micro{font-size:clamp(1.25rem,5.6cqw,1.75rem);font-weight:700}
-  .row__note{font-size:clamp(1.0625rem,4.7cqw,1.487rem)}
-  .row__tags{font-size:clamp(1rem,4.4cqw,1.4rem)}
-  .row__ad{font-size:clamp(1rem,4.3cqw,1.4rem)}
-  .row__cta,.row__soon{min-height:3.75rem;font-size:clamp(1.125rem,5cqw,1.575rem);margin-top:1cqw}
+  .row__bonus .micro{font-size:clamp(1.4rem,5.6cqw,1.75rem);font-weight:700}
+  .row__note{font-size:clamp(1.19rem,4.7cqw,1.487rem)}
+  .row__tags{font-size:clamp(1.12rem,4.4cqw,1.4rem)}
+  .row__ad{font-size:clamp(1.12rem,4.3cqw,1.4rem)}
+  .row__cta,.row__soon{min-height:3.75rem;font-size:clamp(1.26rem,5cqw,1.575rem);margin-top:1cqw}
   .row__cta{background:#fff;color:#000;border-color:#fff}
-  .row__cta:focus-visible{outline-color:#fff}
+  .row__cta:focus-visible{outline-color:var(--focus)}
+  .row__cta::after{z-index:2}
 
   /* ── вопросы и подвал ── */
   .faq__title{padding-bottom:6cqw}
-  .faq summary{font-size:clamp(1.5rem,7.2cqw,2.1rem);padding-block:5cqw}
-  .faq details p{font-size:clamp(1.125rem,4.9cqw,1.575rem)}
-  .foot__legal{font-size:clamp(1.0625rem,4.7cqw,1.487rem)}
-  .foot__line{font-size:clamp(1rem,4.4cqw,1.4rem)}
+  .faq summary{font-size:clamp(1.68rem,7.2cqw,2.1rem);padding-block:5cqw}
+  .faq details p{font-size:clamp(1.26rem,4.9cqw,1.575rem)}
+  .foot__legal{font-size:clamp(1.19rem,4.7cqw,1.487rem)}
+  .foot__line{font-size:clamp(1.12rem,4.4cqw,1.4rem)}
 }
 
 /* ============================ ПОСТЕР (≥45em) ============================ */
@@ -464,7 +465,8 @@ html:not(.js) .rank__empty{display:none}
 /* ============================ усиленный режим ============================ */
 @media (forced-colors:active){
   .slogan--a{mix-blend-mode:normal}
-  .deco,.deco-top,.crest,.panel::before{display:none}
+  .deco,.deco-top,.crest,.panel::before,.row__n,.brandword{display:none}
+  .panel--c .stage{margin-top:0}
   .qr{forced-color-adjust:none}
   .panel{border:1px solid CanvasText}
   .row{border-color:CanvasText}
@@ -473,7 +475,7 @@ html:not(.js) .rank__empty{display:none}
 }
 @media (prefers-contrast:more){
   :root{--white-72:#fff;--line:#fff}
-  .panel::before,.panel--b .deco{display:none}
+  .panel::before,.panel--b .deco,.row__n{display:none}
   .rank__note,.faq details p,.foot__legal{color:#fff}
   .row__soon{opacity:1}
 }
